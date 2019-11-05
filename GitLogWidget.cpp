@@ -42,7 +42,7 @@ GitLogWidget::GitLogWidget(QWidget *parent) : QListWidget(parent) {
         git_oid_tostr(oidstr, 9, &oid);
 
 
-        std::string commit_message(git_commit_message(commit));
+        std::string commit_message(git_commit_summary(commit));
         std::string log_line;
 
         log_line.append(oidstr).append(": ").append(commit_message);
