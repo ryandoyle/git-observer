@@ -11,7 +11,7 @@ GitLogWidget::GitLogWidget(QWidget *parent) : QListWidget(parent) {
 
     git_buf path = {};
     // FIXME: get the path from PWD
-    if (git_repository_discover(&path, "/home/ryan/code/bats", 0, "/home")) {
+    if (git_repository_discover(&path, "/Users/ryandoyle/code/git-observer", 0, "/Users")) {
         const git_error *last_error = giterr_last();
         std::cerr <<__FILE__ << ":" << __LINE__ << " " << last_error->message;
         abort(); // FIXME: Check for a valid git dir before drawing MainWindow, shouldn't get here
